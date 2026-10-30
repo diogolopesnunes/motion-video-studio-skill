@@ -21,7 +21,11 @@
     "render:3d": "node scripts/render.mjs --page assets/three/index.html --duration 8",
     "analyze": "node scripts/analyze.mjs",
     "qa": "node scripts/qa.mjs",
-    "install:skills": "node scripts/install.mjs"
+    "install:skills": "node scripts/install.mjs",
+    "lint": "node scripts/lint.mjs",
+    "shotlist": "node scripts/shotlist.mjs",
+    "new": "node scripts/new.mjs",
+    "gather": "node scripts/gather-assets.mjs"
   },
   "dependencies": {
     "playwright": "1.64.1",

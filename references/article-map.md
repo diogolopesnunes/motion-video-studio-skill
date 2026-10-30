@@ -19,6 +19,10 @@ Este pacote é uma implementação própria do método, com adaptação para Win
 | 11 Critique | Ver os frames, corrigir três problemas, repetir ≥3 rodadas | `review.mjs`, template de review log, teste 360 px, strips, QA técnico separado |
 | 12 Ship | Uma timeline com layouts por formato; empacotar workflow | três proporções, `install.mjs`, README, exemplos, fonte e entregáveis |
 
+## Reforços após releitura integral (30/10/2026)
+
+Releitura completa no Chrome autenticado (≈40 mil caracteres, 12 capítulos). Lacunas fechadas: coleta de assets a partir da URL (`gather`, cap. 04 e skill do cap. 12), shotlist sobre o grid de beats (`shotlist`, caps. 06/09/10), gate automático das regras do estúdio (`lint`, caps. 01/07), scaffold por marca (`new`, caps. 04/12), níveis L1–L5, esforço e contágio de brief ([prompts.md](prompts.md)), spec de morph e log de revisão como templates em `assets/templates/`.
+
 ## Conferência dos códigos e adaptações
 
 Os 17 blocos contemplam: setup; regras de estúdio; prompt mínimo; variantes de showreel; briefing de marca; estudo de referência; spec XML de morph; HTML/canvas; renderer; rotas Remotion/HyperFrames; biblioteca de movimento; extração de beats; SFX; direção de filme; comandos de revisão; prompt de crítica; empacotamento de skill.

@@ -10,20 +10,24 @@ Transforme um briefing em fonte editável, frames revisados, áudio e MP4. A bas
 ## Comece pelo modo correto
 
 - **Referência semelhante ao exemplo:** leia [a análise take por take](references/reference-analysis.md) e [as receitas de efeitos](references/effects.md). A referência está em `examples/reference/original.mp4`; é material de estudo, com direitos separados do código.
-- **Vídeo de produto:** reúna URL, telas reais, logo, fontes, cores, texto aprovado e CTA. O template tem UI fictícia explicitamente rotulada; substitua-a por imagens reais antes de anunciar um produto existente.
+- **Vídeo de produto:** rode `npm run gather -- --url URL --out assets/brand` (só a URL informada; gera telas desktop/mobile, imagens/ícones, cores, fontes e `inventory.json` com licença "não verificada") e reúna também URL, telas reais, logo, fontes, cores, texto aprovado e CTA. O template tem UI fictícia explicitamente rotulada; substitua-a por imagens reais antes de anunciar um produto existente.
 - **UI morph/loop:** use as instruções e o template em `assets/morph/`. Leia a seção de loop em [production.md](references/production.md).
 - **Elementos 3D:** leia [threejs-guide.md](references/threejs-guide.md), reutilize `scripts/three-helpers.mjs` e o template `assets/three/`. A dependência Three.js 0.187.0 já faz parte do pacote; [94 documentos oficiais](references/threejs-sources.md) estão anexados para consulta. Use câmera, geometria, material, luz e animação em função de t; não transporte loops de tempo real dos manuais para o render.
 - **Filme longo/personagem:** leia o template de direção em `assets/brief-template.md`; mantenha uma bíblia de identidade e um guia de animação por projeto.
 - **Revisão pontual:** preserve a fonte existente e renderize só o intervalo afetado com `--start` e `--duration`.
 
-Os comandos abaixo são relativos à pasta que contém este SKILL.md. Descubra essa pasta no ambiente; não suponha que o diretório atual seja a skill. Trabalhe em uma cópia do pacote para cada filme, preservando a instalação reutilizável.
+Escolha o nível de ambição (L1 smoke test … L5 filme longo) em [prompts.md](references/prompts.md): ele define quanto perguntar, quanto revisar e quando parar. Um one-liner testa o motor, não a ideia; para trabalho próprio exija tese, referência e fato verificável.
+
+Os comandos abaixo são relativos à pasta que contém este SKILL.md. Descubra essa pasta no ambiente; não suponha que o diretório atual seja a skill. Trabalhe em uma cópia do pacote para cada filme, preservando a instalação reutilizável. `npm run new -- --dir ../meu-filme` cria `docs/` (brief, style guide, shotlist md/json, spec de morph, review log), `refs/`, `assets/`, `audio/` e `out/` sem sobrescrever; use uma pasta/sessão por marca.
 
 ## Contrato de produção
 
 1. Colete apenas entradas que faltam: tema/produto, objetivo, duração, formatos, marca, referência, trilha/narração, orçamento e entregáveis. Aproveite o que já foi fornecido. Registre suposições reversíveis.
 2. Analise a referência antes de animar. Execute `npm run analyze -- --input VIDEO --fps 4 --out out/reference`. Abra os frames. Registre estilo, takes, ritmo, máscaras, continuidade e áudio; diferencie observação, hipótese e medição. Para timing exato, veja frames consecutivos no original.
 3. Escreva `docs/style_guide.md` e `docs/shotlist.md` com início/fim, mensagem, objeto dominante, entrada, hold, saída, continuidade, câmera e cue sonoro. Use `assets/brief-template.md`. Apresente-os para decisão criativa quando necessária. O artigo contém prompts que pedem aprovação: nunca assuma aprovação pelo silêncio. Quando já houver autorização para o trabalho completo, avance nas ações locais reversíveis.
+3b. Converta `docs/shotlist.json` em plano sobre o grid: `npm run shotlist -- --shotlist docs/shotlist.json --beats out/beats.json --duration 24 --out out/cues.json`. Ele aponta shots fora do beat, lacunas >4 s sem novidade e gera cues para `sfx`. Mostre o resultado antes de escrever animação.
 4. Meça a trilha existente com `scripts/beats.py`; confirme compasso e downbeat. Se não houver música, sintetize uma original com `npm run audio`. Sincronize a narrativa com a voz e use o grid como apoio; não corte palavras apenas para cair em um beat.
+4b. Antes de renderizar qualquer página nova, rode `npm run lint -- --input PASTA`: pega `Math.random`, relógio, timers, `requestAnimationFrame`, transições CSS, `will-change`, glow e ausência de `window.seek`. Erros bloqueiam o render.
 5. Construa keyframes e animatic antes do acabamento. Use o motor A (`assets/starter/`) por padrão. Escolha Remotion/HyperFrames apenas se a necessidade justificar: a arquitetura de rotas está em `references/production.md`. Não instale todos os motores por hábito.
 6. Faça **pelo menos três rodadas** documentadas de revisão em `docs/review_log.md`: 3–5 stills por take, contatos por beat, teste em 360 px e faixa de frames nas transições. Em cada rodada, registre os três maiores problemas com timestamps, corrija e revise novamente. Avalie gancho, leitura, movimento, variedade, composição, marca e sincronismo de 1 a 10. Objetivo: todos ≥8, com evidência; não invente notas quando não conseguir ver/ouvir.
 7. Renderize o master, mixe áudio, rode `qa` e prepare `review`. Reavalie o MP4 codificado, não apenas o canvas. Para cada proporção, recomponha o layout; não recorte o vídeo horizontal para criar retrato.
@@ -51,6 +55,10 @@ npm ci --ignore-scripts
 npx playwright install chromium
 npm run doctor
 npm test
+npm run new -- --dir ../meu-filme
+npm run gather -- --url https://produto.com --out assets/brand
+npm run lint -- --input assets/starter
+npm run shotlist -- --shotlist docs/shotlist.json --beats out/beats.json --out out/cues.json
 npm run audio -- --duration 24 --bpm 120
 npm run sfx -- --cues assets/starter/cues.json --duration 24
 npm run mix -- --music out/score.wav --sfx out/sfx.wav --duration 24

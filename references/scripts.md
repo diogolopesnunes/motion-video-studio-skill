@@ -21,6 +21,20 @@ npm run analyze -- --input examples/reference/original.mp4 --fps 4 --out out/ref
 
 `--input` obrigatório, `--fps` 0,1..12 (default 4), `--out`. Produz JPGs numerados, metadados sem caminho pessoal, `frames.json` com tempos nominais e galeria HTML. Abra a galeria ou os frames com a ferramenta visual do agente. Não identifica os takes automaticamente: a segmentação/editorial depende de inspeção. Uma amostra a 4 fps localiza ações em passos de 0,25 s; não é frame accuracy.
 
+## new, gather, lint, shotlist — preparação e gates
+
+```bash
+npm run new -- --dir ../meu-filme
+npm run gather -- --url https://produto.com --out assets/brand
+npm run lint -- --input assets/starter
+npm run shotlist -- --shotlist docs/shotlist.json --beats out/beats.json --duration 24 --out out/cues.json
+```
+
+- **new**: cria estrutura e templates; nunca sobrescreve arquivo existente.
+- **gather**: Chromium headless abre só a URL http(s) informada (hosts locais/privados exigem `--allow-local`), grava telas 1440×900 e 390×844, baixa até `--max-images` (12) imagens ≤8 MB priorizando logo/ícones, lista cores e fontes dominantes e escreve `inventory.json`. Licença sempre "não verificada": confirme direitos e prefira capturas autorizadas do app.
+- **lint**: regras do motor (random, relógio, timers, raf, transições CSS, will-change, glow, título centralizado em gradiente, `window.seek`). raf/timers sob `navigator.webdriver`/`preview` são aceitos. Sai com código ≠0 em erro.
+- **shotlist**: entrada `[{id,start,end,msg,sfx:[{type,at?,snap?}]}]` (exemplo em `assets/templates/shotlist.example.json`); alinha SFX ao beat mais próximo, sinaliza início fora do beat (`--tolerance`), sobreposição, lacunas (`--gap`) e fim antes de `--duration`. `--out` grava cues no formato de `sfx.mjs` (`--force` sobrescreve). Sem confirmação de downbeat em beats.json, só beats são usados.
+
 ## render.mjs — vídeo ou stills
 
 ```bash
