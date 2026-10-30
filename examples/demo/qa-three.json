@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "errors": [],
+  "video": {
+    "width": 960,
+    "height": 540,
+    "fps": "30/1",
+    "frames": "240",
+    "duration": 8
+  },
+  "audio": null,
+  "visualReview": "REQUIRES_HUMAN_OR_VISION_REVIEW"
+}

@@ -1,0 +1,19 @@
+name: Validate skill and render
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: npm run doctor
+      - run: npm test
+      - run: npm run audio -- --duration 1 --out out/test.wav
+      - run: npm run render -- --duration 1 --fps 12 --sub 4 --scale 0.25 --audio out/test.wav --out out/test.mp4
+      - run: npm run qa -- --input out/test.mp4 --duration 1 --require-audio

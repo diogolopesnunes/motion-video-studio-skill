@@ -1,0 +1,6 @@
+interface:
+  display_name: "Motion Video Studio"
+  short_description: "Motion design com código, referência e revisão visual"
+  default_prompt: "Use $motion-video-studio para criar um vídeo com base na referência, com análise por take, áudio e MP4 revisado."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,571 @@
+{
+  "version": "0.187.0",
+  "tag": "r187",
+  "retrieved": "2026-10-30",
+  "files": [
+    {
+      "file": "api-full.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/llms-full.txt",
+      "bytes": 378970,
+      "sha256": "7e06d23c852bc331c858ea2efdcee95894c85d48c61273cd2acfa50b7ee2e9c9"
+    },
+    {
+      "file": "api-index.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/llms.txt",
+      "bytes": 5404,
+      "sha256": "01ed2929603f3ed0eace16e76226eb70fd35e41f9c4b654e3d4b5f9e9c77621d"
+    },
+    {
+      "file": "api/AnimationAction.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/AnimationAction.html",
+      "bytes": 27472,
+      "sha256": "92fea4bb505cf2c86251a91ee22b6d57ba2dcf36ac3a84b2fc1e01a641472bc4"
+    },
+    {
+      "file": "api/AnimationMixer.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/AnimationMixer.html",
+      "bytes": 12041,
+      "sha256": "bca17b43f6e1330a8645d2a351fc18838a50d67c8092e2c108ac9b08d9aa5b99"
+    },
+    {
+      "file": "api/Box3.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/Box3.html",
+      "bytes": 34830,
+      "sha256": "8a157094658ff05268526fa7d20ad6d3b9531ed0c9231af68e0d8487f1e4d00c"
+    },
+    {
+      "file": "api/BufferGeometry.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/BufferGeometry.html",
+      "bytes": 35143,
+      "sha256": "3a18bf6f55c51b064b59f0c2439866b12297ef1fa80a67ceb8b3c8cc077349b7"
+    },
+    {
+      "file": "api/CanvasTexture.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/CanvasTexture.html",
+      "bytes": 5037,
+      "sha256": "15f58be1158a8b294ec9cb6b9976c4461feacff5b8711188246592dce90ac898"
+    },
+    {
+      "file": "api/DRACOLoader.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/DRACOLoader.html",
+      "bytes": 9758,
+      "sha256": "baf9a899d0fbeb10ac9a86510ee8919d8e023d26d2079562ce694b5855cb7db1"
+    },
+    {
+      "file": "api/EffectComposer.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/EffectComposer.html",
+      "bytes": 12174,
+      "sha256": "a11054fa463dde98032ce0c1a36db65c3161f6ff927d68d0687bed4e044c6718"
+    },
+    {
+      "file": "api/FontLoader.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/FontLoader.html",
+      "bytes": 5303,
+      "sha256": "9424eff2b57e04cd1159dca78ab2bacf4c12e2f8404fc2d43678e37afe989e3c"
+    },
+    {
+      "file": "api/GLTFLoader.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/GLTFLoader.html",
+      "bytes": 15814,
+      "sha256": "c407f8f37e15718c1237383a4c94cb6556d159467eb43d4bcce8b79ee56cf0b4"
+    },
+    {
+      "file": "api/Group.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/Group.html",
+      "bytes": 2131,
+      "sha256": "6f8abad23aa86fefc95ee38fdc45f97ce5ec32498dc26b4484b20027cd0e1684"
+    },
+    {
+      "file": "api/InstancedMesh.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/InstancedMesh.html",
+      "bytes": 15467,
+      "sha256": "cdb07d158d78307687b83c3a5fea64490a14224eb1227f72b364e572f98f4474"
+    },
+    {
+      "file": "api/KTX2Loader.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/KTX2Loader.html",
+      "bytes": 11692,
+      "sha256": "be6f253d222403bbcefaa80037a8e757a932ddd1da794f7d0a05cbb1107abe4c"
+    },
+    {
+      "file": "api/Mesh.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/Mesh.html",
+      "bytes": 9085,
+      "sha256": "d760b7aaa5d999b5a0f38c95e836544231b4b4278854ef49d982f8695d053720"
+    },
+    {
+      "file": "api/MeshBasicMaterial.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/MeshBasicMaterial.html",
+      "bytes": 12089,
+      "sha256": "34b3abb03f0c69d60ea514b06e2c5bd9ec04962a914b889e80664770fd164045"
+    },
+    {
+      "file": "api/MeshPhysicalMaterial.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/MeshPhysicalMaterial.html",
+      "bytes": 24306,
+      "sha256": "99ba7c0eee8f5d9d266d5a4f25be41656d4cd132933c367a67cf4a376b3eb11c"
+    },
+    {
+      "file": "api/MeshStandardMaterial.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/MeshStandardMaterial.html",
+      "bytes": 21119,
+      "sha256": "6f19ee689f5e776f94a7f0e7d719c783e34732dcee10de4294981f9cae40e21d"
+    },
+    {
+      "file": "api/Object3D.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/Object3D.html",
+      "bytes": 69279,
+      "sha256": "afe08e793b54795ef4d0b7dab523a8ed2d3b6d50d1de259794963cc7b80d5a32"
+    },
+    {
+      "file": "api/OrthographicCamera.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/OrthographicCamera.html",
+      "bytes": 10508,
+      "sha256": "91cb27c07e3410491f00e2c71890766d80498594159b5ef68094b1c0642f187f"
+    },
+    {
+      "file": "api/OutputPass.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/OutputPass.html",
+      "bytes": 5909,
+      "sha256": "8f2348b7bf152c76fdcb96c9ecc17389cef6b356d7816bbd9bb4480048f00986"
+    },
+    {
+      "file": "api/PerspectiveCamera.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/PerspectiveCamera.html",
+      "bytes": 17414,
+      "sha256": "123788f1b199fe484238efb95732dafa5daabb7843f289649227e035bf9d95ef"
+    },
+    {
+      "file": "api/PMREMGenerator.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/PMREMGenerator.html",
+      "bytes": 10582,
+      "sha256": "3170bd1bddb8f277d05e373c040dfc0c1ba8f009522b6d047030896cb2e91ebe"
+    },
+    {
+      "file": "api/RenderPass.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/RenderPass.html",
+      "bytes": 9350,
+      "sha256": "f1bee0ee676199b47ad465ae5d5c172f0686610a8360fc55c7b9da37a5efb7b6"
+    },
+    {
+      "file": "api/RenderTarget.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/RenderTarget.html",
+      "bytes": 23511,
+      "sha256": "30e1caa60050d0287608bc539331cb883bf3e9b35c221dcf3ddb825c30355939"
+    },
+    {
+      "file": "api/Scene.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/Scene.html",
+      "bytes": 6244,
+      "sha256": "767b37b8c961a1bf51cc790bc48a9bf3b35919e954b2a4a3df564b3575b58dfb"
+    },
+    {
+      "file": "api/ShaderMaterial.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/ShaderMaterial.html",
+      "bytes": 15159,
+      "sha256": "6bbeca961b1f4c1bce8a49e8ec6a721d652a73df8367fd40e099f8f63d953cca"
+    },
+    {
+      "file": "api/Sphere.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/Sphere.html",
+      "bytes": 20336,
+      "sha256": "bb93cdd375e52039c3eef60314686e2147c4e117a56229394d0eabe60bd90c42"
+    },
+    {
+      "file": "api/TextGeometry.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/TextGeometry.html",
+      "bytes": 7271,
+      "sha256": "95f5bb15531bce0f6bfc20ea35cc8319264fbd743a3227f9aef35900a5085352"
+    },
+    {
+      "file": "api/Texture.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/Texture.html",
+      "bytes": 32544,
+      "sha256": "0c53d4ee7bc71ab2888e62ec0078f428088da3700b7c0cb5f14445a84d6b12a6"
+    },
+    {
+      "file": "api/WebGLRenderer.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/WebGLRenderer.html",
+      "bytes": 72893,
+      "sha256": "5c09eb5393a10bdfccf2b90d90201899aa17f1f2a9aaed734ff30e7e43c14de1"
+    },
+    {
+      "file": "api/WebGLRenderTarget.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/WebGLRenderTarget.html",
+      "bytes": 3023,
+      "sha256": "459cff1fc3f2609c2f07fc195ed51cca4b10b49ff5f27dc5f8199ef2cc576fbf"
+    },
+    {
+      "file": "api/WebGPURenderer.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/docs/pages/WebGPURenderer.html",
+      "bytes": 7040,
+      "sha256": "49a8b9b50c19481928b6aee7aedc61486d9036d0a9bab39e8c4db3b0e7621a0c"
+    },
+    {
+      "file": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/LICENSE",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "file": "manual/align-html-elements-to-3d.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/align-html-elements-to-3d.html",
+      "bytes": 32496,
+      "sha256": "e19deb50ebdc470920fd054729023bbc017380aff65290fc2e216eb5a6f39ccc"
+    },
+    {
+      "file": "manual/animation-system.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/animation-system.html",
+      "bytes": 6349,
+      "sha256": "973996033e50ac88586f5c34bb5fbff67fa17794d249f805f89c72aab670d244"
+    },
+    {
+      "file": "manual/backgrounds.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/backgrounds.html",
+      "bytes": 13023,
+      "sha256": "72b129921ba25fc795a9f3bd9b90904761ff97bfcef4a75356c49fa1e4f7d670"
+    },
+    {
+      "file": "manual/billboards.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/billboards.html",
+      "bytes": 14913,
+      "sha256": "877d017532c874cae8137ed80565b8eaa40faa74a3ff0259590f75c41e34160b"
+    },
+    {
+      "file": "manual/cameras.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/cameras.html",
+      "bytes": 30355,
+      "sha256": "dc4e6441c511c040cd9e93aeeaaacd153e9e379557aad034a1c2cb8167241bd7"
+    },
+    {
+      "file": "manual/canvas-textures.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/canvas-textures.html",
+      "bytes": 17843,
+      "sha256": "9bd82860dd912159bc4bd0a3fed694961d2f58aba5c10d6c297785f7aeefd7eb"
+    },
+    {
+      "file": "manual/cleanup.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/cleanup.html",
+      "bytes": 17338,
+      "sha256": "b97e0f50830fde3276503b5175c3538d2183a8bbf03a6948762a87ca24afa1db"
+    },
+    {
+      "file": "manual/color-management.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/color-management.html",
+      "bytes": 14350,
+      "sha256": "dd3adaa7a76857bff163974b3780804917e2a0059490f958f00ff2f111845fed"
+    },
+    {
+      "file": "manual/creating-a-scene.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/creating-a-scene.html",
+      "bytes": 9217,
+      "sha256": "46b25f147b13559cab51fdca3c53e800b741a37c21a66daa20a6e5397008917c"
+    },
+    {
+      "file": "manual/creating-text.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/creating-text.html",
+      "bytes": 7047,
+      "sha256": "420018e87775f792ac78e69d6f67fbc1aee0e6a536413d9512b7e74688b45447"
+    },
+    {
+      "file": "manual/custom-buffergeometry.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/custom-buffergeometry.html",
+      "bytes": 24026,
+      "sha256": "4e7df7ba1bc4d177e5e1ccc08a9b6ad09de44e3349f39c507fd449f7acdc18e9"
+    },
+    {
+      "file": "manual/debugging-glsl.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/debugging-glsl.html",
+      "bytes": 6801,
+      "sha256": "5d847396ed9cce900a0ef48dd73a110ca254e34dcd609a42c513d1c45b8e1d96"
+    },
+    {
+      "file": "manual/debugging-javascript.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/debugging-javascript.html",
+      "bytes": 28950,
+      "sha256": "d8b9907da750a8dc5c7f2e44791241362cc12ec5fa57914c21ea3c3ae7170647"
+    },
+    {
+      "file": "manual/drawing-lines.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/drawing-lines.html",
+      "bytes": 3342,
+      "sha256": "13f44f5c2fefbb7a06bba566dfe71c34f5e1c76f44cbe9205a7f73e07ce7fd86"
+    },
+    {
+      "file": "manual/faq.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/faq.html",
+      "bytes": 5252,
+      "sha256": "bcc7b4591b1a53233d690849192870c129c31a089f0a8b0689e25010da9871d9"
+    },
+    {
+      "file": "manual/fog.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/fog.html",
+      "bytes": 14476,
+      "sha256": "72cefa462eb4988f1e80d290c6ab012a89762746992b73e8c4d0692a3353c86b"
+    },
+    {
+      "file": "manual/fundamentals.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/fundamentals.html",
+      "bytes": 27607,
+      "sha256": "5114f059ad5ecc504a7caa16a046949bf918d4ed3a898fd4c55e2aecfe9f8a82"
+    },
+    {
+      "file": "manual/game.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/game.html",
+      "bytes": 83525,
+      "sha256": "4b83e8416d5ae5c437ad064bd70ee0f357bbe32d6131dd3ac93334818d66c186"
+    },
+    {
+      "file": "manual/how-to-create-vr-content.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/how-to-create-vr-content.html",
+      "bytes": 3891,
+      "sha256": "4d45c113592aaa80968590ba2fcd363e972d273f79c807f5930f73757a2a3827"
+    },
+    {
+      "file": "manual/how-to-dispose-of-objects.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/how-to-dispose-of-objects.html",
+      "bytes": 10974,
+      "sha256": "6f24a876d491deec996ab9bc2620addb8dc53d3c425bca29d06a3703a5e7acf1"
+    },
+    {
+      "file": "manual/how-to-update-things.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/how-to-update-things.html",
+      "bytes": 12287,
+      "sha256": "6d54abd15129e91bb9fcdda18be4c6a5bdfb1eceda58b60b54f0ca392efc8ce8"
+    },
+    {
+      "file": "manual/how-to-use-post-processing.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/how-to-use-post-processing.html",
+      "bytes": 6374,
+      "sha256": "93db9cb383e70d396c2b60146563cf29d000d21b07d58c35e836bef5b14bd6c7"
+    },
+    {
+      "file": "manual/indexed-textures.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/indexed-textures.html",
+      "bytes": 29122,
+      "sha256": "36d186371c647a4332d461b4783360b47b563c39cc882c8873b47b39994735fe"
+    },
+    {
+      "file": "manual/installation.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/installation.html",
+      "bytes": 14151,
+      "sha256": "7f1d08185a7b2cb4690aa4e12431ff95695ca7fd0b0fa6e4faaf8a9e88515de9"
+    },
+    {
+      "file": "manual/libraries-and-plugins.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/libraries-and-plugins.html",
+      "bytes": 6576,
+      "sha256": "de1aa4f005c3e4e1ec3dd6fd7ea608f7caebc48e47ada7fd750e02f0cc2d9695"
+    },
+    {
+      "file": "manual/lights.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/lights.html",
+      "bytes": 29058,
+      "sha256": "6dfc5ed632d65548b51f14da2f93b101b388bdbb26c51a12f2cd2271464db3e9"
+    },
+    {
+      "file": "manual/load-gltf.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/load-gltf.html",
+      "bytes": 33194,
+      "sha256": "88d89863a1f27c1d6e19dbef74bc9023eb6da17dd8a44e2c142425310b4a5a95"
+    },
+    {
+      "file": "manual/load-obj.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/load-obj.html",
+      "bytes": 35387,
+      "sha256": "ec3704698529b9c611f22d9d080855f05c1b37812704816a34b357b3ebfc6134"
+    },
+    {
+      "file": "manual/loading-3d-models.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/loading-3d-models.html",
+      "bytes": 8697,
+      "sha256": "f4425dc06d7fcb4c8ba69a81602373bf9d5e7cc7779eac51c74092f261cf1b31"
+    },
+    {
+      "file": "manual/material-table.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/material-table.html",
+      "bytes": 1621,
+      "sha256": "aac2fcb896e770b2242c1510ec900e6c4a78f84f2b3837f93e326a5000f4a2d2"
+    },
+    {
+      "file": "manual/materials.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/materials.html",
+      "bytes": 18989,
+      "sha256": "1c4f5243b37743061b383d0280df1a49611b38454670ea3a501cfd27d73e88e2"
+    },
+    {
+      "file": "manual/matrix-transformations.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/matrix-transformations.html",
+      "bytes": 5229,
+      "sha256": "6f13cc1cb3cac4a6d33facf7fef4ef711bae8cdc3fdbd8501cda45acc4c65bc2"
+    },
+    {
+      "file": "manual/multiple-scenes.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/multiple-scenes.html",
+      "bytes": 27984,
+      "sha256": "f12885b5d9092bf0cde0fa6f75614dfa664a775168ffe61028901da6a2e842e5"
+    },
+    {
+      "file": "manual/offscreencanvas.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/offscreencanvas.html",
+      "bytes": 45650,
+      "sha256": "520495873f6cf6c02babaf9dd916c7b0af7da04648b685d260da5d766c83f952"
+    },
+    {
+      "file": "manual/optimize-lots-of-objects-animated.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/optimize-lots-of-objects-animated.html",
+      "bytes": 22012,
+      "sha256": "f19e91b88c5ac07f6ad555b6d49c0b387c31e3123b30c62fa00a278943b3e6a1"
+    },
+    {
+      "file": "manual/optimize-lots-of-objects.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/optimize-lots-of-objects.html",
+      "bytes": 25485,
+      "sha256": "6ba8ebc3c431500b79b71dda1991455ace12853e1e8e06865d1148434a857dec"
+    },
+    {
+      "file": "manual/physics.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/physics.html",
+      "bytes": 11514,
+      "sha256": "3a9ada5e397a90a192a77b68e30eebc51f4517067fba6944fa66e071345b16d9"
+    },
+    {
+      "file": "manual/picking.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/picking.html",
+      "bytes": 20945,
+      "sha256": "c147290d7ef79c3f6a99198eb2bc9d5f5393cccc9848cffe89e4724ae6eccbe0"
+    },
+    {
+      "file": "manual/post-processing.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/post-processing.html",
+      "bytes": 16841,
+      "sha256": "d75242ccbe6171ffb26438621931c1c006f02308aedbbadcaa3862e93cbe33f4"
+    },
+    {
+      "file": "manual/prerequisites.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/prerequisites.html",
+      "bytes": 20782,
+      "sha256": "6ddb7cfe1da7978bff72b70fa2e7739b090b9cf136f596f98e60bc850fbdd9ef"
+    },
+    {
+      "file": "manual/primitives.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/primitives.html",
+      "bytes": 22357,
+      "sha256": "59007cc5f4cb8027630c1ce3ab8a0a83e98149f998c52c6c6d64c1b1c0b7da14"
+    },
+    {
+      "file": "manual/rendering-on-demand.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/rendering-on-demand.html",
+      "bytes": 12015,
+      "sha256": "c2e4ee6338171d4b2d42cb9880356daa492920d9c91d6bf2fd5bbf43be4d2aa7"
+    },
+    {
+      "file": "manual/rendertargets.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/rendertargets.html",
+      "bytes": 7852,
+      "sha256": "8c1a65290bb6d52c9d5d1c076b2f902b6c43687794b325694443dce2a0c35d7c"
+    },
+    {
+      "file": "manual/responsive.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/responsive.html",
+      "bytes": 16626,
+      "sha256": "08c13b597fdd0f846e3da3fc605cf6b63b4293c840f1770d58877a1cd9c58764"
+    },
+    {
+      "file": "manual/scenegraph.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/scenegraph.html",
+      "bytes": 29347,
+      "sha256": "a4ca23a62d071be2aa5e98cdf7da0b1185c2086b53fc9f9bfe3f1e2476b09c86"
+    },
+    {
+      "file": "manual/setup.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/setup.html",
+      "bytes": 4454,
+      "sha256": "0f5036fb49afc4a8ecf3f583612c60fea91e22ee7149c235485a03037105c68b"
+    },
+    {
+      "file": "manual/shadertoy.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/shadertoy.html",
+      "bytes": 23177,
+      "sha256": "dcdadb72beb456af56675df9f71364d1f020527fe2204cd9672d9c3767d23294"
+    },
+    {
+      "file": "manual/shadows.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/shadows.html",
+      "bytes": 28904,
+      "sha256": "58bb975063b68498bac897786f1cad62b261591ace14a161130c98ae5833ec26"
+    },
+    {
+      "file": "manual/textures.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/textures.html",
+      "bytes": 32499,
+      "sha256": "2c7c4c6fcbee541c69f054de6a84370f236fa0bed541d0a20e77fb6153ba63f2"
+    },
+    {
+      "file": "manual/tips.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/tips.html",
+      "bytes": 16517,
+      "sha256": "64aa013992f4da4133931b09c5c0c2d42f54103232b94aa255efaf4a27b0f342"
+    },
+    {
+      "file": "manual/transparency.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/transparency.html",
+      "bytes": 18997,
+      "sha256": "ed375d805a94e3415af423de0f6364d5b0b320c802ce3e4f1f75e577abf06077"
+    },
+    {
+      "file": "manual/uniform-types.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/uniform-types.html",
+      "bytes": 7395,
+      "sha256": "af34d2b2e613804ccbb6bdc4ab6b300a1b3aaa7b6e323757378b616dc50c422e"
+    },
+    {
+      "file": "manual/useful-links.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/useful-links.html",
+      "bytes": 9560,
+      "sha256": "f870c3f8d1067540504067b22a71930d0db1655e7a35fab290106f9fc1fe45a8"
+    },
+    {
+      "file": "manual/voxel-geometry.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/voxel-geometry.html",
+      "bytes": 44281,
+      "sha256": "dac91dc4bd1c9aa197f7bb4877f5fb7d90d2fa1185ef3dd86245c909fc694981"
+    },
+    {
+      "file": "manual/webgl-compatibility-check.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/webgl-compatibility-check.html",
+      "bytes": 2044,
+      "sha256": "9b51efd96a005a29c4b40d823b90840a15671b838575476f3d7f2816cd8c63b6"
+    },
+    {
+      "file": "manual/webgpu-postprocessing.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/webgpu-postprocessing.html",
+      "bytes": 10603,
+      "sha256": "f824df728df0c4ca1869e45a9d5da03e8f7d8be5ec982e68a0f77aec9e1bf124"
+    },
+    {
+      "file": "manual/webgpurenderer.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/webgpurenderer.html",
+      "bytes": 9222,
+      "sha256": "645a23b381580baf72ea76a4fd8adf105520e40028c01a932023a4f08de0636e"
+    },
+    {
+      "file": "manual/webxr-basics.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/webxr-basics.html",
+      "bytes": 19200,
+      "sha256": "12c929780f8a755b411e87f3f3a14507b1f43e2766ec7e51d01b4a0f4828d0cb"
+    },
+    {
+      "file": "manual/webxr-look-to-select.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/webxr-look-to-select.html",
+      "bytes": 21532,
+      "sha256": "6f67b7921dfe69e9f526af5155cbe5329b22722e9d9909684addcc3d85bcc1aa"
+    },
+    {
+      "file": "manual/webxr-point-to-select.html.txt",
+      "url": "https://raw.githubusercontent.com/mrdoob/three.js/r187/manual/pages/webxr-point-to-select.html",
+      "bytes": 17748,
+      "sha256": "bbc5027bfee97888abbfd8f61be87aac09fd7fc01d57e3836ca6ca52c4c36f0f"
+    }
+  ]
+}
