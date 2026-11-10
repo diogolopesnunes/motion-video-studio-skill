@@ -69,3 +69,8 @@ npm run review -- --input out/final.mp4 --out out/review
 ```
 
 O renderer abre apenas assets locais via loopback e bloqueia rede externa no navegador. Isso não torna código externo confiável: leia o código antes de executar e respeite as permissões do ambiente. Não imprima chaves nem incorpore `.env` ao projeto compartilhado. O pacote básico funciona sem API e sem créditos pagos.
+
+
+## Extensões do fork
+
+Para projetos independentes, rode `npm run new -- --dir ../meu-projeto` e depois `npm run produce -- --project-root ../meu-projeto --quality preview --duration 24 --format 9:16`. O comando orquestra lint, render, QA técnico e contact sheets. `render` também aceita `--project-root` e perfis `--quality preview|standard|master`. Para heurísticas de tela escura/parada, use `npm run qa -- --input out/final.mp4 --auto-visual`. A mixagem com voz usa ducking automático, desligável por `--duck off`. Consulte [as melhorias do fork](references/fork-improvements.md). A crítica estética e a escuta ainda exigem revisão humana.
