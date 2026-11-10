@@ -11,6 +11,8 @@
     "doctor": "node scripts/doctor.mjs",
     "test": "node --test tests/*.test.mjs",
     "render": "node scripts/render.mjs",
+    "produce": "node scripts/produce.mjs",
+    "visual-check": "node scripts/visual-check.mjs",
     "stills": "node scripts/render.mjs --stills",
     "audio": "node scripts/audio.mjs",
     "sfx": "node scripts/sfx.mjs",
