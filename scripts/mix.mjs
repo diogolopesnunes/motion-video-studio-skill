@@ -10,7 +10,11 @@ main(async()=>{
   if(a.sfx){ins.push('-i',path.resolve(a.sfx));graph=`[0:a]volume=0.8[m];[1:a]volume=0.7[s];[m][s]amix=inputs=2:duration=longest:normalize=0,apad,atrim=duration=${duration}[mix]`;}
   if(a.voice){
     const voiceIndex=a.sfx?2:1;ins.push('-i',path.resolve(a.voice));
-    graph=graph.replace('[mix]','[base]')+`;[base]volume=0.25[bed];[${voiceIndex}:a]apad,atrim=duration=${duration}[voice];[bed][voice]amix=inputs=2:duration=longest:normalize=0[mix]`;
+    const duck = a.duck !== 'false' && a.duck !== 'off';
+    graph=graph.replace('[mix]','[base]')+`;[base]volume=${duck?'0.8':'0.25'}[bed];[${voiceIndex}:a]apad,atrim=duration=${duration}[voice]`;
+    graph += duck
+      ? ';[voice]asplit=2[voiceSC][voiceMix];[bed][voiceSC]sidechaincompress=threshold=0.025:ratio=6:attack=20:release=300[ducked];[ducked][voiceMix]amix=inputs=2:duration=longest:normalize=0[mix]'
+      : ';[bed][voice]amix=inputs=2:duration=longest:normalize=0[mix]';
   }
   // Controlar crest factor antes de normalizar evita pedir ganho impossível a
   // transientes muito curtos. Limiter final é posterior ao resample de saída.
