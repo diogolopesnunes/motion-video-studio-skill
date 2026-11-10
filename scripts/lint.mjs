@@ -40,11 +40,11 @@ async function files(p){
 }
 import {pathToFileURL} from 'node:url';
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)main(async()=>{
-  const a=args(),target=path.resolve(a.input||path.join(ROOT,'assets/starter'));
+  const a=args(),root=path.resolve(a['project-root']||ROOT),target=path.resolve(root,a.input||'assets/starter');
   const list=await files(target);let errors=0,warns=0,seek=false;
   for(const f of list){
     const text=await fs.readFile(f,'utf8');
-    seek||=/window.seeks*=/.test(text);
+    seek||=/window\.seek\s*=/.test(text);
     if(/(^|[\/])(motion|three-helpers).mjs$/.test(f))continue;
     for(const x of lintSource(text)){console.log(`${x.level.toUpperCase()} ${path.relative(process.cwd(),f)}:${x.line} [${x.rule}] ${x.msg}`);x.level==='error'?errors++:warns++;}
   }
