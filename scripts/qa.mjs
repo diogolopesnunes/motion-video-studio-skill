@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {args,probe,run,number,main} from './common.mjs';
+import {analyzeVisual} from './visual-check.mjs';
 main(async()=>{
   const a=args();if(!a.input) throw new Error('--input VIDEO obrigatório');
   const input=path.resolve(a.input), p=probe(input), video=p.streams.find(s=>s.codec_type==='video'), audio=p.streams.find(s=>s.codec_type==='audio');
@@ -24,7 +25,8 @@ main(async()=>{
     if(a['check-loudness'] && (!Number.isFinite(loudness.integratedLUFS)||Math.abs(loudness.integratedLUFS+14)>.8||loudness.truePeakDBTP>-1))errors.push('Loudness fora da tolerância (-14±0,8 LUFS; pico ≤-1 dBTP)');
   }
   delete p.format.filename;
-  const report={passed:errors.length===0,errors,video:{width:video.width,height:video.height,fps:video.avg_frame_rate,frames:video.nb_frames,duration},audio:audio?{codec:audio.codec_name,rate:audio.sample_rate,channels:audio.channels,loudness}:null,visualReview:'REQUIRES_HUMAN_OR_VISION_REVIEW'};
+  const visualHints=a['auto-visual']?analyzeVisual(input):null;
+  const report={passed:errors.length===0,errors,visualHints,video:{width:video.width,height:video.height,fps:video.avg_frame_rate,frames:video.nb_frames,duration},audio:audio?{codec:audio.codec_name,rate:audio.sample_rate,channels:audio.channels,loudness}:null,visualReview:'REQUIRES_HUMAN_OR_VISION_REVIEW'};
   const out=path.resolve(a.out || 'out/qa.json');await fs.mkdir(path.dirname(out),{recursive:true});await fs.writeFile(out,JSON.stringify(report,null,2));
   console.log(JSON.stringify(report,null,2));if(errors.length) process.exitCode=1;
 });
