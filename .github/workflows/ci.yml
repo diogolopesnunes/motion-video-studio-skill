@@ -16,4 +16,7 @@ jobs:
       - run: npm test
       - run: npm run audio -- --duration 1 --out out/test.wav
       - run: npm run render -- --duration 1 --fps 12 --sub 4 --scale 0.25 --audio out/test.wav --out out/test.mp4
-      - run: npm run qa -- --input out/test.mp4 --duration 1 --require-audio
+      - run: npm run qa -- --input out/test.mp4 --duration 1 --require-audio --auto-visual
+      - run: npm run new -- --dir /tmp/motion-ci-project
+      - run: npm run lint -- --project-root /tmp/motion-ci-project --input assets/starter
+      - run: npm run produce -- --project-root /tmp/motion-ci-project --duration 0.5 --quality preview --format 9:16 --out out/vertical-ci.mp4
