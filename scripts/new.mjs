@@ -19,7 +19,13 @@ main(async()=>{
     const to=path.join(dir,dest);
     try{await fs.copyFile(path.join(ROOT,'assets',src),to,fs.constants.COPYFILE_EXCL);made.push(dest);}catch(e){if(e.code!=='EEXIST')throw e;}
   }
+  // Projeto independente e executável: copia a cena inicial e os helpers importados.
+  const starter=path.join(ROOT,'assets/starter'), dest=path.join(dir,'assets/starter');
+  await fs.mkdir(dest,{recursive:true});
+  await fs.cp(starter,dest,{recursive:true,force:false,errorOnExist:false});
+  await fs.mkdir(path.join(dir,'scripts'),{recursive:true});
+  await fs.copyFile(path.join(ROOT,'scripts/motion.mjs'),path.join(dir,'scripts/motion.mjs'),fs.constants.COPYFILE_EXCL).catch(e=>{if(e.code!=='EEXIST')throw e;});
   await fs.writeFile(path.join(dir,'.gitignore'),'out/\n.env\n.env.*\n!.env.example\nnode_modules/\n',{flag:'wx'}).catch(e=>{if(e.code!=='EEXIST')throw e;});
   console.log(`Projeto em ${dir}. Criados: ${made.join(', ')||'(nada novo)'}.`);
-  console.log(`Próximo: ponha refs em refs/, preencha docs/brief.md e rode comandos da skill em ${ROOT} com --out/--input apontando para este projeto.`);
+  console.log(`Próximo: preencha docs/brief.md e rode npm run produce -- --project-root ${dir} --duration 24 --quality preview.`);
 });
