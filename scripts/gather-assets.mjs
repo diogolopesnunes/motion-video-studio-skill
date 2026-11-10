@@ -1,6 +1,7 @@
 import {chromium} from 'playwright';
 import fs from 'node:fs/promises';
 import net from 'node:net';
+import dns from 'node:dns/promises';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {args,main,number} from './common.mjs';
@@ -9,14 +10,42 @@ export function checkUrl(raw,{allowLocal=false}={}){
   const u=new URL(raw);
   if(!['http:','https:'].includes(u.protocol))throw new Error('Apenas http(s)');
   const h=u.hostname.replace(/^\[|\]$/g,'');
-  const priv=h==='localhost'||h.endsWith('.localhost')||h.endsWith('.local')||(net.isIP(h)&&/^(127\.|10\.|192\.168\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.|::1$|f[cd])/i.test(h));
+  const priv=h==='localhost'||h.endsWith('.localhost')||h.endsWith('.local')||(net.isIP(h)&&isPrivateIP(h));
   if(priv&&!allowLocal)throw new Error('Host local/privado bloqueado; use --allow-local só para seu próprio app');
+  return u;
+}
+// Block common local, private, multicast, link-local and reserved IP destinations.
+export function isPrivateIP(ip) {
+  const family=net.isIP(ip);
+  if(family===6) {
+    const v=ip.toLowerCase();
+    if(v.startsWith('::ffff:'))return isPrivateIP(v.slice(7));
+    return v==='::'||v==='::1'||/^f[cd]/.test(v)||/^fe[89ab]/.test(v)||v.startsWith('ff');
+  }
+  if(family!==4)return true;
+  const p=ip.split('.').map(Number);
+  return p[0]===0||p[0]===10||p[0]===127||p[0]>=224||
+    (p[0]===169&&p[1]===254)||
+    (p[0]===172&&p[1]>=16&&p[1]<=31)||
+    (p[0]===192&&p[1]===168)||
+    (p[0]===100&&p[1]>=64&&p[1]<=127)||
+    (p[0]===198&&p[1]===18);
+}
+export async function assertAllowedUrl(raw,{allowLocal=false}={}) {
+  const u=checkUrl(raw,{allowLocal});
+  if(!allowLocal) {
+    const addresses=await dns.lookup(u.hostname,{all:true});
+    if(!addresses.length||addresses.some(x=>isPrivateIP(x.address))) {
+      throw new Error('DNS aponta para IP privado/reservado');
+    }
+  }
   return u;
 }
 const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)||'asset';
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)main(async()=>{
   const a=args();if(!a.url)throw new Error('--url https://produto.com obrigatório');
-  const u=checkUrl(a.url,{allowLocal:!!a['allow-local']});
+  const allowLocal=!!a['allow-local'];
+  const u=await assertAllowedUrl(a.url,{allowLocal});
   const out=path.resolve(a.out||'assets/brand');await fs.mkdir(out,{recursive:true});
   const maxImages=number(a['max-images'],12,0,40,'max-images');
   const browser=await chromium.launch({headless:true});
@@ -25,7 +54,13 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)main(a
     for(const [name,vp,mobile] of [['desktop',{width:1440,height:900},false],['mobile',{width:390,height:844},true]]){
       const ctx=await browser.newContext({viewport:vp,deviceScaleFactor:1,isMobile:mobile,serviceWorkers:'block'});
       const page=await ctx.newPage();
-      await page.goto(u.href,{waitUntil:'networkidle',timeout:45000}).catch(()=>{});
+      // Validate every request (including third-party resources); no redirect to local IPs.
+      await page.route('**/*',async route=>{
+        try {await assertAllowedUrl(route.request().url(),{allowLocal});await route.continue();}
+        catch {await route.abort('blockedbyclient');}
+      });
+      await page.goto(u.href,{waitUntil:'domcontentloaded',timeout:45000});
+      await page.waitForLoadState('networkidle',{timeout:8000}).catch(()=>{});
       await page.evaluate(()=>document.fonts?.ready);
       const file=path.join(out,`screen-${name}.png`);
       await page.screenshot({path:file,fullPage:false});
@@ -51,7 +86,10 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)main(a
         let n=0;
         for(const i of urls){
           try{
-            const r=await ctx.request.get(i.src,{timeout:15000});
+            await assertAllowedUrl(i.src,{allowLocal});
+            const r=await ctx.request.get(i.src,{timeout:15000,maxRedirects:0});
+            const declaredSize=Number(r.headers()['content-length']||0);
+            if(declaredSize>8e6)continue;
             const body=await r.body();const type=r.headers()['content-type']||'';
             if(!r.ok()||!/^image\//.test(type)||body.length>8e6)continue;
             const ext=(type.split('/')[1]||'bin').split(/[+;]/)[0].replace('svg','svg').replace('jpeg','jpg');
