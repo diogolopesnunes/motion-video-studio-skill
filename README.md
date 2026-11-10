@@ -293,3 +293,8 @@ tests/                    Verificações de matemática, pixels e servidor
 Método principal: [artigo de Movez](https://x.com/0xMovez/status/2104216919033192746), conferido com os códigos completos e capturas fornecidas. A [matriz de rastreabilidade](references/article-map.md) mostra onde cada capítulo foi aplicado e quais correções técnicas foram feitas.
 
 Código e documentação originais: [MIT](LICENSE). Vídeo de referência, marcas, áudio e mídia de terceiros: **excluídos da MIT**, conforme [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Sem afiliação ou endosso de Movez, Anthropic, OpenAI ou fornecedores citados.
+
+
+## Extensões deste fork
+
+Este fork adiciona projetos independentes, perfis de render, comando `produce`, QA visual heurístico, ducking sob locução, componentes Canvas e testes adicionais. Leia [as melhorias e limitações](references/fork-improvements.md). O processo não contém avaliação estética por IA, correções criativas automáticas ou TTS integrado.
